@@ -21,15 +21,14 @@
 
 ## Installation
 
-
 ```bash
-pip3 install openai_detector
+npm install openai-detector
 ```
 
 or
 
 ```bash
-pip3 install git+https://github.com/promptslab/openai-detector.git
+yarn add openai-detector
 ```
 
 
@@ -37,26 +36,27 @@ pip3 install git+https://github.com/promptslab/openai-detector.git
 
 
 
-```python
+```typescript
 
-from detector import OpenaiDetector
+import { OpenaiDetector } from 'openai-detector';
 
-sentence     = """All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end. Of course they lived at 14, and until Wendy came her mother was the chief one. She was a lovely lady, with a romantic mind and such a sweet mocking mouth. Her romantic mind was like the tiny boxes, one within the other, that come from the puzzling East, however many you discover there is always one more; and her sweet mocking mouth had one kiss on it that Wendy could never get, though there it was, perfectly conspicuous in the right-hand corner. The way Mr. Darling won her was this: the many gentlemen who had been boys when she was a girl discovered simultaneously that they loved her, and they all ran to her house to propose to her except Mr. Darling, who took a cab and nipped in first, and so he got her. He got all of her, except the innermost box and the kiss. He never knew about the box, and in time he gave up trying for the kiss. Wendy thought Napoleon could have got it, but I can picture him trying, and then going off in a passion, slamming the door. Mr. Darling used to boast to Wendy that her mother not only loved him but respected him. He was one of those deep ones who know about stocks and shares. Of course no one really knows, but he quite seemed to know, and he often said stocks were up and shares were down in a way that would have made any woman respect him."""
-bearer_token = 'Bearer sess-abcd1234..'
+const sentence = "All children, except one, grow up. They soon know that they will grow up, and the"; way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end. Of course they lived at 14, and until Wendy came her mother was the chief one. She was a lovely lady, with a romantic mind and such a sweet mocking mouth. Her romantic mind was like the tiny boxes, one within the other, that come from the puzzling East, however many you discover there is always one more; and her sweet mocking mouth had one kiss on it that Wendy could never get, though there it was, perfectly conspicuous in the right-hand corner. The way Mr. Darling won her was this: the many gentlemen who had been boys when she was a girl discovered simultaneously that they loved her, and they all ran to her house to propose to her except Mr. Darling, who took a cab and nipped in first, and so he got her. He got all of her, except the innermost box and the kiss. He never knew about the box, and in time he gave up trying for the kiss. Wendy thought Napoleon could have got it, but I can picture him trying, and then going off in a passion, slamming the door. Mr. Darling used to boast to Wendy that her mother not only loved him but respected him. He was one of those deep ones who know about stocks and shares. Of course no one really knows, but he quite seemed to know, and he often said stocks were up and shares were down in a way that would have made any woman respect him."""
+const bearerToken = 'Bearer sess-abcd1234..';
 
-od = OpenaiDetector(bearer_token)
-response = od.detect(sentence)
-print(response)                          
-                          
-### Output
+const od = new OpenaiDetector(bearerToken);
+od.detect(sentence).then(response => {
+  console.log(response);
+});
 
-{"output"          : "The classifier considers the text to be very unlikely AI-generated.",
-"Confidence score" : 96.15870427207666}
+// Output
+// {
+//   "output": "The classifier considers the text to be very unlikely AI-generated.", 
+//   "confidenceScore": 96.15870427207666
+// }
 
 ```
 
-## Run on colab
-  <a href="https://colab.research.google.com/drive/1f4YG9stX9aHmsmh6ZhzjekJU4X4BIynO?usp=sharing">
+
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="colab" />
   </a>
 
