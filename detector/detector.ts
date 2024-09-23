@@ -9,7 +9,7 @@ export class OpenaiDetector {
 		this.header = {
 			Accept: '*/*',
 			'Accept-Language': 'en-US,en;q=0.9,hi;q=0.8',
-			Authorization: token,
+			Authorization: `Bearer ${token}`,
 			Connection: 'keep-alive',
 			'Content-Type': 'application/json',
 			Origin: 'https://platform.openai.com',
