@@ -60,13 +60,6 @@ od.detect(sentence).then(response => {
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="colab" />
   </a>
 
-## Community
-
-If you are interested in Prompt-Engineering, LLMs, ChatGPT and other latest research discussions, please consider joining PromptsLab
-
-<a href="https://discord.gg/m88xfYMbK6">
-<img alt="Join us on Discord" src="https://img.shields.io/discord/1069129502472556587?color=5865F2&logo=discord&logoColor=white"></a>
-
 ## Steps to get Bearer token from chrome
 
 
@@ -86,10 +79,27 @@ Here is an example
 ## TO-DO
 
 - Add all classes labels (total 5 classes from openai) ✅
-- add verifier to check if the sentence is 1000 characters long
-- automatically detect token from user_name, password
+- Add verifier to check if the sentence is 1000 characters long
+- Automatically detect token from user_name, password
+- ✅ Include ESLint for TypeScript in the project
 
 
 ## Web Version
 
 https://openai.com/blog/new-ai-classifier-for-indicating-ai-written-text/
+
+## Linting
+
+This project uses ESLint for TypeScript. To run the linter, use the following command:
+
+```bash
+npm run lint
+```
+
+Or if you're using yarn:
+
+```bash
+yarn lint
+```
+
+This will check all TypeScript files in the project for style and potential errors.
